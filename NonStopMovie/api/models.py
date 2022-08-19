@@ -25,7 +25,7 @@ class movie(models.Model):
     movie_homepage=models.URLField(help_text="Movie Home Page")
     movie_overview = models.CharField(help_text="Movie overview", max_length=500, null=False)
     movie_votes_avg = models.DecimalField(help_text="Movie Budget",max_digits=8,decimal_places=2)
-    movie_votes_count = models.DecimalField(help_text="Movie Budget",max_digits=8,decimal_places=2)
+    movie_votes_count = models.IntegerField(help_text="Movie Budget",)
     movie_release_date = models.DateTimeField(help_text="Movie Budget")
     movie_poster = models.ImageField(help_text="Movie poster",upload_to="movie_poster",blank=True)
 
