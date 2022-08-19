@@ -27,7 +27,18 @@ def Movie_detail(request,pk):
     Movie_detail=movie.objects.get(id=pk)
     serializer=Movieserializers(Movie_detail,many=False)
     return Response(serializer.data)
-
-
+@api_view(['POST'])
+def Movie_create(request):
+    serializer=Movieserializers(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+@api_view(['POST'])
+def Movie_Update(request,pk):
+    movie_update=movie.objects.get(id=pk)
+    serializer=Movieserializers(instance=movie_update,data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
 
 
