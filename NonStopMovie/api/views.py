@@ -22,6 +22,12 @@ def Movie_list(request):
     return  Response(serializers.data)
 
 
+@api_view(['GET'])
+def Movie_detail(request,pk):
+    Movie_detail=movie.objects.get(id=pk)
+    serializer=Movieserializers(Movie_detail,many=False)
+    return Response(serializer.data)
+
 
 
 
