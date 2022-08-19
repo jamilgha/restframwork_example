@@ -28,6 +28,7 @@ class movie(models.Model):
     movie_votes_count = models.IntegerField(help_text="Movie Budget",)
     movie_release_date = models.DateTimeField(help_text="Movie Budget")
     movie_poster = models.ImageField(help_text="Movie poster",upload_to="movie_poster",blank=True)
+    Link_play=models.URLField(help_text="Downloads and Stream Movie",max_length=300,null=True)
 
     def __str__(self):
         return  self.movie_title
