@@ -9,3 +9,4 @@ urlpatterns=[
     path('movie-create/', views.Movie_create, name='Movie Create'),
     path('movie-update/<str:pk>', views.Movie_Update, name='Movie update'),
 ]
+
